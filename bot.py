@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup as bt
 import os 
 
 url = 'https://store.steampowered.com/search/?maxprice=free&supportedlang=english&specials=1&ndl=1'
-DISCORDWEBHOOK = os.getenv("DISCORD_WEBHOOK")
+DISCORDWEBHOOK = os.environ.get('DISCORD_WEBHOOK')
 request = requests.get(url)
 
 
@@ -38,3 +38,4 @@ if request.status_code == 200:
 
 else:
     print("Error, not status_code 200 detected")
+
