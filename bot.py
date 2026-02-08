@@ -12,7 +12,9 @@ def sendjson(gametittle,linkgame,gameimage):
         "content": f"Nuevo juego reclamable gratis en steam por tiempo limitado, es {gametittle} / link: {linkgame}",
         "image": f"{gameimage}" #Image but with the link is enought
     }
-    requests.post(DISCORDWEBHOOK, json=data)
+    #requests.post(DISCORDWEBHOOK, json=data)
+    if not webhook:
+    raise ValueError("DISCORD_WEBHOOK environment variable not set")
 
 
 if request.status_code == 200:
@@ -38,4 +40,5 @@ if request.status_code == 200:
 
 else:
     print("Error, not status_code 200 detected")
+
 
