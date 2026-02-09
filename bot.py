@@ -1,3 +1,6 @@
+# By Alexmarpar
+# https://github.com/Alexmarpar/
+
 import requests
 from bs4 import BeautifulSoup as bt
 import os 
@@ -38,7 +41,5 @@ if request.status_code == 200:
 
 else:
     print("Error, not status_code 200 detected")
-
-
 
 
